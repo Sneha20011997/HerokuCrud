@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const url ='mongodb://localhost/ProgrammerDBex'
-const port = process.env.PORT ||9000;
+const PORT = process.env.PORT || 3000;
 const DB = 'mongodb+srv://sneha:Sneha20@cluster0.onku0.mongodb.net/ProgrammerDBex?retryWrites=true&w=majority';
 
 const app = express()
@@ -28,6 +28,6 @@ app.use(express.json())
 const studentRouter = require('./routers/students')
 app.use('/students',studentRouter)    
 
-app.listen(9000, () => {
-    console.log('server started')
-})
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
